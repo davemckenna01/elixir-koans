@@ -20,18 +20,18 @@ defmodule Tuples do
   end
 
   koan "You can also simply extend a tuple with new stuff" do
-    assert Tuple.insert_at({:a, "hi"}, 1, :new_thing) == ___
+    assert Tuple.insert_at({:a, "hi"}, 1, :new_thing) == {:a, :new_thing, "hi"}
   end
 
   koan "Add things at the end" do
-    assert Tuple.append({"Huey", "Dewey"}, "Louie") == ___
+    assert Tuple.append({"Huey", "Dewey"}, "Louie") == {"Huey", "Dewey", "Louie"}
   end
 
   koan "Or remove them" do
-    assert Tuple.delete_at({:this, :is, :not, :awesome}, 2) == ___
+    assert Tuple.delete_at({:this, :is, :not, :awesome}, 2) == {:this, :is, :awesome}
   end
 
   koan "Turn it into a list in case you need it" do
-    assert Tuple.to_list({:this, :can, :be, :a, :list}) == ___
+    assert Tuple.to_list({:this, :can, :be, :a, :list}) == [:this, :can, :be, :a, :list]
   end
 end
